@@ -111,14 +111,14 @@ variable "rule_groups" {
       }))
       enabled    = bool
       expression = string
-      for        = optional(string)
+      for        = string
       labels     = map(string)
       alert_resolution = optional(object({
         auto_resolved   = optional(bool)
         time_to_resolve = optional(string)
       }))
       severity    = optional(number)
-      annotations = map(string)
+      annotations = optional(map(string))
     }))
 
     tags = optional(map(string), {})
