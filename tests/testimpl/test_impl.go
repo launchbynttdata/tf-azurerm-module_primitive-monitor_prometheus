@@ -20,7 +20,7 @@ func TestMonitorPrometheus(t *testing.T, ctx types.TestContext) {
 	dceId := terraform.Output(t, ctx.TerratestTerraformOptions(), "data_collection_endpoint_id")
 	dcrId := terraform.Output(t, ctx.TerratestTerraformOptions(), "data_collection_rule_id")
 
-	ruleGroupId := terraform.Output(t, ctx.TerratestTerraformOptions(), "rule_group_ids.MultiplePodAlertingRuleGroup")
+	ruleGroupId := terraform.OutputMap(t, ctx.TerratestTerraformOptions(), "rule_group_ids")["MultiplePodAlertingRuleGroup"]
 
 	t.Run("MonitoringEnabled", func(t *testing.T) {
 		rgName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
@@ -31,6 +31,7 @@ func TestMonitorPrometheus(t *testing.T, ctx types.TestContext) {
 
 		assert.NotNil(t, cluster.AddonProfiles["monitoring"], "Monitoring addon must be enabled")
 		assert.True(t, *cluster.AddonProfiles["monitoring"].Enabled, "Monitoring addon must be enabled")
+
 	})
 
 	t.Run("TfOutputsNotEmpty", func(t *testing.T) {

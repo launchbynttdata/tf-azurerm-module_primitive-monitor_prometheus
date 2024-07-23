@@ -10,7 +10,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "resource_group" {
+output "resource_group_name" {
   description = "Resource group of the AKS cluster"
   value       = module.resource_names["resource_group"].minimal_random_suffix
 }
