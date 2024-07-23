@@ -352,7 +352,7 @@ resource "azurerm_monitor_alert_prometheus_rule_group" "rule_group" {
       annotations = rule.value.annotations
 
       dynamic "action" {
-        for_each = lookup(rule.value, "action", [])
+        for_each = rule.value.action != null ? [1] : []
 
         content {
           action_group_id = action.value.action_group_id
@@ -360,7 +360,7 @@ resource "azurerm_monitor_alert_prometheus_rule_group" "rule_group" {
       }
 
       dynamic "alert_resolution" {
-        for_each = lookup(rule.value, "alert_resolution", [])
+        for_each = rule.value.alert_resolution != null ? [1] : []
 
         content {
           auto_resolved   = alert_resolution.value.auto_resolved
