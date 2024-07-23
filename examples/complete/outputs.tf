@@ -10,6 +10,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+output "resource_group" {
+  description = "Resource group of the AKS cluster"
+  value       = module.resource_names["resource_group"].minimal_random_suffix
+}
+
+output "cluster_name" {
+  description = "Name of the AKS cluster"
+  value       = module.aks_cluster.aks_name
+}
 
 output "default_rule_group_ids" {
   description = "Resource IDs of the default rule groups created for prometheus"
