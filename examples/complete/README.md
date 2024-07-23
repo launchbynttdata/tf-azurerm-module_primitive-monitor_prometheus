@@ -16,8 +16,8 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git | 1.0.1 |
-| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-resource_group.git | 1.0.0 |
+| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | terraform.registry.launch.nttdata.com/module_library/resource_name/launch | ~> 1.0 |
+| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm | ~> 1.0 |
 | <a name="module_monitor_workspace"></a> [monitor\_workspace](#module\_monitor\_workspace) | terraform.registry.launch.nttdata.com/module_primitive/monitor_workspace/azurerm | ~> 1.0 |
 | <a name="module_aks_cluster"></a> [aks\_cluster](#module\_aks\_cluster) | terraform.registry.launch.nttdata.com/module_primitive/kubernetes_cluster/azurerm | ~> 2.0 |
 | <a name="module_monitor_prometheus"></a> [monitor\_prometheus](#module\_monitor\_prometheus) | ../.. | n/a |
