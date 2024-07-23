@@ -370,5 +370,5 @@ resource "azurerm_monitor_alert_prometheus_rule_group" "rule_group" {
     }
   }
 
-  tags = local.tags
+  tags = merge(local.tags, each.value.tags)
 }

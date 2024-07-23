@@ -121,7 +121,7 @@ variable "rule_groups" {
       annotations = map(string)
     }))
 
-    tags = map(string)
+    tags = optional(map(string), {})
   }))
   default = {}
 }
