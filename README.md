@@ -125,8 +125,8 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurerm_monitor_alert_prometheus_rule_group.default_kubernetes_recording_rule_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_alert_prometheus_rule_group) | resource |
 | [azurerm_monitor_alert_prometheus_rule_group.default_node_recording_rule_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_alert_prometheus_rule_group) | resource |
-| [azurerm_monitor_alert_prometheus_rule_group.kubernetes_recording_rule_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_alert_prometheus_rule_group) | resource |
 | [azurerm_monitor_alert_prometheus_rule_group.rule_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_alert_prometheus_rule_group) | resource |
 | [azurerm_monitor_data_collection_endpoint.dce](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_endpoint) | resource |
 | [azurerm_monitor_data_collection_rule.dcr](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_rule) | resource |
@@ -150,5 +150,14 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_default_rule_group_ids"></a> [default\_rule\_group\_ids](#output\_default\_rule\_group\_ids) | Resource IDs of the default rule groups created for prometheus |
+| <a name="output_default_rule_group_names"></a> [default\_rule\_group\_names](#output\_default\_rule\_group\_names) | Resource IDs of the default rule groups created for prometheus |
+| <a name="output_rule_group_ids"></a> [rule\_group\_ids](#output\_rule\_group\_ids) | Resource IDs of the user-defined rule groups created for prometheus |
+| <a name="output_rule_group_names"></a> [rule\_group\_names](#output\_rule\_group\_names) | Resource IDs of the user-defined rule groups created for prometheus |
+| <a name="output_data_collection_endpoint_id"></a> [data\_collection\_endpoint\_id](#output\_data\_collection\_endpoint\_id) | Resource ID of the data collection endpoint created for prometheus |
+| <a name="output_data_collection_endpoint_name"></a> [data\_collection\_endpoint\_name](#output\_data\_collection\_endpoint\_name) | Resource ID of the data collection endpoint created for prometheus |
+| <a name="output_data_collection_rule_id"></a> [data\_collection\_rule\_id](#output\_data\_collection\_rule\_id) | Resource ID of the data collection rule created for prometheus |
+| <a name="output_data_collection_rule_name"></a> [data\_collection\_rule\_name](#output\_data\_collection\_rule\_name) | Resource ID of the data collection rule created for prometheus |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

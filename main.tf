@@ -157,7 +157,7 @@ EOF
 # Rules provided by Azure in their documentation for enabling prometheus
 # https://learn.microsoft.com/en-us/azure/azure-monitor/containers/kubernetes-monitoring-enable?tabs=terraform#enable-prometheus-and-grafana
 # https://github.com/Azure/prometheus-collector/blob/0349c8630edc4cf3da5905ce3d3f59013527599f/AddonTerraformTemplate/main.tf#L204
-resource "azurerm_monitor_alert_prometheus_rule_group" "kubernetes_recording_rule_group" {
+resource "azurerm_monitor_alert_prometheus_rule_group" "default_kubernetes_recording_rule_group" {
   name                = var.default_rule_group_naming["kubernetes_recording"]
   location            = var.location
   resource_group_name = var.resource_group_name

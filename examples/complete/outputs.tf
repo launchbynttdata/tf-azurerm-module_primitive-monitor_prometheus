@@ -13,46 +13,40 @@
 
 output "default_rule_group_ids" {
   description = "Resource IDs of the default rule groups created for prometheus"
-  value = {
-    "node_recording"       = azurerm_monitor_alert_prometheus_rule_group.default_node_recording_rule_group.id
-    "kubernetes_recording" = azurerm_monitor_alert_prometheus_rule_group.default_kubernetes_recording_rule_group.id
-  }
+  value       = module.monitor_prometheus.default_rule_group_ids
 }
 
 output "default_rule_group_names" {
   description = "Resource IDs of the default rule groups created for prometheus"
-  value = {
-    "node_recording"       = azurerm_monitor_alert_prometheus_rule_group.default_node_recording_rule_group.name
-    "kubernetes_recording" = azurerm_monitor_alert_prometheus_rule_group.default_kubernetes_recording_rule_group.name
-  }
+  value       = module.monitor_prometheus.default_rule_group_names
 }
 
 output "rule_group_ids" {
   description = "Resource IDs of the user-defined rule groups created for prometheus"
-  value       = { for key, rule_group in azurerm_monitor_alert_prometheus_rule_group.rule_group : key => rule_group.id }
+  value       = module.monitor_prometheus.rule_group_ids
 }
 
 output "rule_group_names" {
   description = "Resource IDs of the user-defined rule groups created for prometheus"
-  value       = { for key, rule_group in azurerm_monitor_alert_prometheus_rule_group.rule_group : key => rule_group.name }
+  value       = module.monitor_prometheus.rule_group_names
 }
 
 output "data_collection_endpoint_id" {
   description = "Resource ID of the data collection endpoint created for prometheus"
-  value       = azurerm_monitor_data_collection_endpoint.dce.id
+  value       = module.monitor_prometheus.data_collection_endpoint_id
 }
 
 output "data_collection_endpoint_name" {
   description = "Resource ID of the data collection endpoint created for prometheus"
-  value       = azurerm_monitor_data_collection_endpoint.dce.name
+  value       = module.monitor_prometheus.data_collection_endpoint_name
 }
 
 output "data_collection_rule_id" {
   description = "Resource ID of the data collection rule created for prometheus"
-  value       = azurerm_monitor_data_collection_rule.dcr.id
+  value       = module.monitor_prometheus.data_collection_rule_id
 }
 
 output "data_collection_rule_name" {
   description = "Resource ID of the data collection rule created for prometheus"
-  value       = azurerm_monitor_data_collection_rule.dcr.id
+  value       = module.monitor_prometheus.data_collection_rule_name
 }
