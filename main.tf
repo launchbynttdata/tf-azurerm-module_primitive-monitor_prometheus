@@ -60,7 +60,6 @@ resource "azurerm_monitor_data_collection_rule_association" "dcra_dcr" {
 }
 
 resource "azurerm_monitor_data_collection_rule_association" "dcra_dce" {
-  name                        = local.aks_cluster_name
   target_resource_id          = var.aks_cluster_id
   data_collection_endpoint_id = azurerm_monitor_data_collection_endpoint.dce.id
   description                 = "Association of data collection endpoint to AKS cluster"
