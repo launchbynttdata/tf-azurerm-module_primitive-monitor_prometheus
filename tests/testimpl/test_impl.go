@@ -29,9 +29,8 @@ func TestMonitorPrometheus(t *testing.T, ctx types.TestContext) {
 		cluster, err := azure.GetManagedClusterE(t, rgName, aksName, subscriptionId)
 		assert.Nil(t, err, "Error getting managed cluster")
 
-		assert.NotNil(t, cluster.AddonProfiles["monitoring"], "Monitoring addon must be enabled")
-		assert.True(t, *cluster.AddonProfiles["monitoring"].Enabled, "Monitoring addon must be enabled")
-
+		assert.NotNil(t, cluster.AddonProfiles["omsagent"], "Monitoring addon must be enabled")
+		assert.True(t, *cluster.AddonProfiles["omsagent"].Enabled, "Monitoring addon must be enabled")
 	})
 
 	t.Run("TfOutputsNotEmpty", func(t *testing.T) {
