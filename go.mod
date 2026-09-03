@@ -1,6 +1,6 @@
 module github.com/launchbynttdata/tf-azurerm-module_primitive-monitor_prometheus
 
-go 1.21
+go 1.26.7
 
 require (
 	github.com/gruntwork-io/terratest v0.43.12

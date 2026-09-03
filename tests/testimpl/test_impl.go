@@ -39,3 +39,7 @@ func TestMonitorPrometheus(t *testing.T, ctx types.TestContext) {
 		assert.NotEmpty(t, ruleGroupId, "Rule group ID must not be empty")
 	})
 }
+
+func TestComposableMonitorPrometheus(t *testing.T, ctx types.TestContext) {
+	TestMonitorPrometheus(t, ctx)
+}
