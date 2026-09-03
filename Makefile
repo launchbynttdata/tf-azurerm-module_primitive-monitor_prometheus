@@ -191,7 +191,7 @@ endef
 define create_example_providers
 	$(eval PROVIDER_FILE_PATH:=$(call provider_file_path,$(1)))
 	$(eval INCLUDE_AWS_GLOBAL:=$(if $(filter .,$(1)),$(findstring aws.global,$(shell grep -se "\\s*provider\\s*=" *.tf || true)),))
-	$(foreach PROVIDER,$(shell terraform providers | sed -re 's/.+\[(.+\/.+\/.+)\].+/\1/g' | grep registry | sort | uniq),$(call add_provider_details,$(PROVIDER_FILE_PATH),$(PROVIDER)))
+	$(foreach PROVIDER,$(shell $(TERRAFORM) -chdir=$(1) providers | sed -re 's/.+\[(.+\/.+\/.+)\].+/\1/g' | grep registry | sort | uniq),$(call add_provider_details,$(PROVIDER_FILE_PATH),$(PROVIDER)))
 endef
 
 define plan_terraform_module
