@@ -39,5 +39,5 @@ func TestMonitorPrometheusModule(t *testing.T) {
 		}).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestMonitorPrometheus)
+	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestComposableMonitorPrometheus)
 }

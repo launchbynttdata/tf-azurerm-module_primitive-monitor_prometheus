@@ -39,5 +39,5 @@ func TestMonitorPrometheusModuleReadonly(t *testing.T) {
 		}).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestMonitorPrometheus)
+	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestComposableMonitorPrometheus)
 }
