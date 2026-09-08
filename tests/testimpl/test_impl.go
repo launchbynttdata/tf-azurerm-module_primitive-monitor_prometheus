@@ -1,6 +1,7 @@
 package testimpl
 
 import (
+	"context"
 	"os"
 	"strings"
 	"testing"
@@ -12,21 +13,21 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestMonitorPrometheus(t *testing.T, ctx types.TestContext) {
+func TestComposableMonitorPrometheus(t *testing.T, ctx types.TestContext) {
 
 	subscriptionId := os.Getenv("ARM_SUBSCRIPTION_ID")
 	if len(subscriptionId) == 0 {
 		t.Fatal("ARM_SUBSCRIPTION_ID environment variable is not set")
 	}
 
-	dceId := terraform.Output(t, ctx.TerratestTerraformOptions(), "data_collection_endpoint_id")
-	dcrId := terraform.Output(t, ctx.TerratestTerraformOptions(), "data_collection_rule_id")
+	dceId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "data_collection_endpoint_id")
+	dcrId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "data_collection_rule_id")
 
-	ruleGroupId := terraform.OutputMap(t, ctx.TerratestTerraformOptions(), "rule_group_ids")["MultiplePodAlertingRuleGroup"]
+	ruleGroupId := terraform.OutputMapContext(t, context.Background(), ctx.TerratestTerraformOptions(), "rule_group_ids")["MultiplePodAlertingRuleGroup"]
 
 	t.Run("MonitoringEnabled", func(t *testing.T) {
-		rgName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
-		aksName := terraform.Output(t, ctx.TerratestTerraformOptions(), "cluster_name")
+		rgName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
+		aksName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "cluster_name")
 
 		cluster, err := azure.GetManagedClusterE(t, rgName, aksName, subscriptionId)
 		if err != nil {
