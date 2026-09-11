@@ -29,12 +29,6 @@ Install pinned tool versions and bootstrap dependencies from the repository root
 make configure
 ```
 
-For Azure-backed tests, set environment variables using:
-
-```
-make env
-```
-
 ## Pre-Commit Hooks
 
 This repository uses [.pre-commit-config.yaml](.pre-commit-config.yaml) to run Terraform, Go, and repository hygiene checks.
