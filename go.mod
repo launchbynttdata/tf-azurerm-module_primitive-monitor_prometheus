@@ -2,8 +2,6 @@ module github.com/launchbynttdata/tf-azurerm-module_primitive-monitor_prometheus
 
 go 1.26.7
 
-tool github.com/golangci/golangci-lint/v2/cmd/golangci-lint
-
 require (
 	github.com/gruntwork-io/terratest v1.0.1
 	github.com/launchbynttdata/lcaf-component-terratest v1.0.4

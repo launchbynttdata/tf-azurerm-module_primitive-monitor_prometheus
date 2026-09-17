@@ -23,6 +23,7 @@ module "resource_names" {
   cloud_resource_type     = each.value.name
   instance_env            = var.instance_env
   maximum_length          = each.value.max_length
+  instance_resource       = var.instance_resource
 }
 
 module "resource_group" {
@@ -83,5 +84,7 @@ module "monitor_prometheus" {
 
   rule_groups = var.rule_groups
 
-  depends_on = [module.monitor_workspace]
+  # Ensure AKS post-create extension operations complete before attaching
+  # Prometheus data collection resources to avoid transient Azure conflicts.
+  depends_on = [module.monitor_workspace, module.aks_cluster]
 }
